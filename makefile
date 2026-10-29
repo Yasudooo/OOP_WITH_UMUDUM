@@ -1,4 +1,4 @@
-CFLAGS += -W -Wall -Wextra -g -Werror
+CFLAGS += -W -Wall -Wextra -g -Werror -fsanitize=address
 CC = g++
 OBJ = ueb02.o caddress.o cdate.o clocation.o cperson.o ctime.o 
 OBJ_3 = ueb03.o caddress.o cdate.o clocation.o cperson.o ctime.o cmedium.o clibrary.o clibrarypool.o
@@ -39,3 +39,6 @@ cperson.o: cperson.cpp cperson.h
 
 ctime.o: ctime.cpp ctime.h
 	$(CC) $(CFLAGS) -c ctime.cpp
+
+clean:
+	rm -f *.o ueb03 ueb02

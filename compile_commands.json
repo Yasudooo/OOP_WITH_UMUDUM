@@ -1,0 +1,128 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-W",
+      "-Wall",
+      "-Wextra",
+      "-g",
+      "-Werror",
+      "-c",
+      "ueb03.cpp"
+    ],
+    "directory": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02",
+    "file": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02/ueb03.cpp"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-W",
+      "-Wall",
+      "-Wextra",
+      "-g",
+      "-Werror",
+      "-c",
+      "caddress.cpp"
+    ],
+    "directory": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02",
+    "file": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02/caddress.cpp"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-W",
+      "-Wall",
+      "-Wextra",
+      "-g",
+      "-Werror",
+      "-c",
+      "cdate.cpp"
+    ],
+    "directory": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02",
+    "file": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02/cdate.cpp"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-W",
+      "-Wall",
+      "-Wextra",
+      "-g",
+      "-Werror",
+      "-c",
+      "clocation.cpp"
+    ],
+    "directory": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02",
+    "file": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02/clocation.cpp"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-W",
+      "-Wall",
+      "-Wextra",
+      "-g",
+      "-Werror",
+      "-c",
+      "cperson.cpp"
+    ],
+    "directory": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02",
+    "file": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02/cperson.cpp"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-W",
+      "-Wall",
+      "-Wextra",
+      "-g",
+      "-Werror",
+      "-c",
+      "ctime.cpp"
+    ],
+    "directory": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02",
+    "file": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02/ctime.cpp"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-W",
+      "-Wall",
+      "-Wextra",
+      "-g",
+      "-Werror",
+      "-c",
+      "cmedium.cpp"
+    ],
+    "directory": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02",
+    "file": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02/cmedium.cpp"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-W",
+      "-Wall",
+      "-Wextra",
+      "-g",
+      "-Werror",
+      "-c",
+      "clibrary.cpp"
+    ],
+    "directory": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02",
+    "file": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02/clibrary.cpp"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-W",
+      "-Wall",
+      "-Wextra",
+      "-g",
+      "-Werror",
+      "-c",
+      "clibrarypool.cpp"
+    ],
+    "directory": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02",
+    "file": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02/clibrarypool.cpp"
+  }
+]
