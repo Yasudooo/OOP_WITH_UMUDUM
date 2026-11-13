@@ -2,17 +2,18 @@
 
 #define CDATE_H
 
-class CDate      
+class CDate
 {
-    //private:
-        int Day, Month, Year;
+		// private:
+		int Day, Month, Year;
 
-    // Methoden
-    public:
-        CDate();              // Konstruktor für das aktuelle Datum
-        CDate(int, int, int); // Konstruktor für variables Datum 
-        void setDate(int, int, int);
-        void print();
+		// Methoden
+	public:
+		CDate();              // Konstruktor für das aktuelle Datum
+		CDate(int, int, int); // Konstruktor für variables Datum
+		void setDate(int, int, int);
+		void print();
+		void load(std::ofstream &file);
 };
 
 #endif
