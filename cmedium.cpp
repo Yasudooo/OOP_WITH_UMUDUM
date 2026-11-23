@@ -33,7 +33,7 @@ string CMedium::getStatus() {
          : (this->Status & bestellt)    ? "bestellt"
                                         : "reserviert";
 }
-
+ 
 void CMedium::setTitle(string Title) { this->Title = Title; }
 
 void CMedium::setSignature(string Signature) { this->Signature = Signature; }

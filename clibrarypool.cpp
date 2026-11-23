@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream>
 
 using namespace std;
 
@@ -14,7 +15,7 @@ using namespace std;
 #include "clibrarypool.h"
 
 CLibraryPool::CLibraryPool(string Büchereiverband, CPerson *elPatron)
-: Büchereiverbund(Büchereiverband), elPatron(elPatron)
+: Büchereiverband(Büchereiverband), elPatron(elPatron)
 {
 }
 
@@ -32,7 +33,7 @@ void CLibraryPool::add(CLibrary *Store)
 
 void CLibraryPool::print()
 {
-    cout << this->Büchereiverbund << '\n' ;
+    cout << this->Büchereiverband << '\n' ;
     cout << "Leitung "; this->elPatron->print();
     
     cout << "\nZum Büchereiverband gehören " << this->libraryStores.size() << " Filialen:\n\n";
@@ -50,4 +51,43 @@ void CLibraryPool::print()
         this->Customer.at(i)->print();
         cout << "\n\n"; 
     }
+}
+
+CLibraryPool::CLibraryPool(char *filename)
+{
+    ifstream file; // ifstream ist zum lesen da 
+
+    file.open(filename, ios::in);
+
+    string line; 
+
+    if (!file)
+    {
+        cout << "Das öffnen der Datei hat nicht funktioniert.";
+        return;
+    }
+    
+    // gesamte Zeile eingelesen, inklusiv vom \n , also das offset landet direkt in der nächsten Zeile
+    while (!file.eof()) // returns false if eof isn't reached
+    {    
+        getline(file, line);
+
+        /*
+        * every attribut of CLibraryPool means a case 
+        * in dependence of what got read with getline, has to be called the load method 
+        * or just assign  
+        ********************************************************************************************
+        * for the vectors:
+        * treat them like arrays, assign and then increase index 
+        * or
+        * increase index and then assign 
+        */
+
+        /*
+        * needed is a till_char for c++ to skip every cha to '<' (specific because of XML - file) 
+        */
+       
+
+    }
+
 }

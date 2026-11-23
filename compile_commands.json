@@ -7,11 +7,12 @@
       "-Wextra",
       "-g",
       "-Werror",
+      "-fsanitize=address",
       "-c",
       "ueb03.cpp"
     ],
-    "directory": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02",
-    "file": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02/ueb03.cpp"
+    "directory": "/home/yasudo/UNI/Q3/OOP/OOP_MIT_UMUDUM/UEB_ALLE",
+    "file": "/home/yasudo/UNI/Q3/OOP/OOP_MIT_UMUDUM/UEB_ALLE/ueb03.cpp"
   },
   {
     "arguments": [
@@ -21,11 +22,12 @@
       "-Wextra",
       "-g",
       "-Werror",
+      "-fsanitize=address",
       "-c",
       "caddress.cpp"
     ],
-    "directory": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02",
-    "file": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02/caddress.cpp"
+    "directory": "/home/yasudo/UNI/Q3/OOP/OOP_MIT_UMUDUM/UEB_ALLE",
+    "file": "/home/yasudo/UNI/Q3/OOP/OOP_MIT_UMUDUM/UEB_ALLE/caddress.cpp"
   },
   {
     "arguments": [
@@ -35,11 +37,12 @@
       "-Wextra",
       "-g",
       "-Werror",
+      "-fsanitize=address",
       "-c",
       "cdate.cpp"
     ],
-    "directory": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02",
-    "file": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02/cdate.cpp"
+    "directory": "/home/yasudo/UNI/Q3/OOP/OOP_MIT_UMUDUM/UEB_ALLE",
+    "file": "/home/yasudo/UNI/Q3/OOP/OOP_MIT_UMUDUM/UEB_ALLE/cdate.cpp"
   },
   {
     "arguments": [
@@ -49,11 +52,12 @@
       "-Wextra",
       "-g",
       "-Werror",
+      "-fsanitize=address",
       "-c",
       "clocation.cpp"
     ],
-    "directory": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02",
-    "file": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02/clocation.cpp"
+    "directory": "/home/yasudo/UNI/Q3/OOP/OOP_MIT_UMUDUM/UEB_ALLE",
+    "file": "/home/yasudo/UNI/Q3/OOP/OOP_MIT_UMUDUM/UEB_ALLE/clocation.cpp"
   },
   {
     "arguments": [
@@ -63,11 +67,12 @@
       "-Wextra",
       "-g",
       "-Werror",
+      "-fsanitize=address",
       "-c",
       "cperson.cpp"
     ],
-    "directory": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02",
-    "file": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02/cperson.cpp"
+    "directory": "/home/yasudo/UNI/Q3/OOP/OOP_MIT_UMUDUM/UEB_ALLE",
+    "file": "/home/yasudo/UNI/Q3/OOP/OOP_MIT_UMUDUM/UEB_ALLE/cperson.cpp"
   },
   {
     "arguments": [
@@ -77,11 +82,12 @@
       "-Wextra",
       "-g",
       "-Werror",
+      "-fsanitize=address",
       "-c",
       "ctime.cpp"
     ],
-    "directory": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02",
-    "file": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02/ctime.cpp"
+    "directory": "/home/yasudo/UNI/Q3/OOP/OOP_MIT_UMUDUM/UEB_ALLE",
+    "file": "/home/yasudo/UNI/Q3/OOP/OOP_MIT_UMUDUM/UEB_ALLE/ctime.cpp"
   },
   {
     "arguments": [
@@ -91,11 +97,12 @@
       "-Wextra",
       "-g",
       "-Werror",
+      "-fsanitize=address",
       "-c",
       "cmedium.cpp"
     ],
-    "directory": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02",
-    "file": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02/cmedium.cpp"
+    "directory": "/home/yasudo/UNI/Q3/OOP/OOP_MIT_UMUDUM/UEB_ALLE",
+    "file": "/home/yasudo/UNI/Q3/OOP/OOP_MIT_UMUDUM/UEB_ALLE/cmedium.cpp"
   },
   {
     "arguments": [
@@ -105,11 +112,12 @@
       "-Wextra",
       "-g",
       "-Werror",
+      "-fsanitize=address",
       "-c",
       "clibrary.cpp"
     ],
-    "directory": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02",
-    "file": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02/clibrary.cpp"
+    "directory": "/home/yasudo/UNI/Q3/OOP/OOP_MIT_UMUDUM/UEB_ALLE",
+    "file": "/home/yasudo/UNI/Q3/OOP/OOP_MIT_UMUDUM/UEB_ALLE/clibrary.cpp"
   },
   {
     "arguments": [
@@ -119,10 +127,11 @@
       "-Wextra",
       "-g",
       "-Werror",
+      "-fsanitize=address",
       "-c",
       "clibrarypool.cpp"
     ],
-    "directory": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02",
-    "file": "/home/yasudo/UNI/Q3/OOP/SELFMADE_OOP/UEB02/clibrarypool.cpp"
+    "directory": "/home/yasudo/UNI/Q3/OOP/OOP_MIT_UMUDUM/UEB_ALLE",
+    "file": "/home/yasudo/UNI/Q3/OOP/OOP_MIT_UMUDUM/UEB_ALLE/clibrarypool.cpp"
   }
 ]
