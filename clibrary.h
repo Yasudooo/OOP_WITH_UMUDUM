@@ -4,15 +4,20 @@
 
 class CLibrary
 {
-        string Name;
-        CAddress Address;
-        CPerson *Manager;
-        vector<CMedium*> Books;
+	string Name;
+	CAddress Address;
+	CPerson *Manager;
+	vector<CMedium *> Books;
 
-    public:
-        CLibrary(string, CAddress, CPerson *);
-        void add(CMedium*);
-        void print();
+public:
+	CLibrary(string, CAddress, CPerson *);
+	void add(CMedium *);
+	void print();
+
+	// Speichern (written by Umut):
+	void load(std::ifstream &file);
+	// std:ifstream ist der Datentyp einer mit Open geöffneten file. Und Differenzierung statt pointer
+	// um nullpointer zu vermeiden. Die Differenzierung garantiert quasi ne File.
 };
 
 #endif
