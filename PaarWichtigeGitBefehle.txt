@@ -52,7 +52,7 @@ rm -rf ~/.config/Code/Cache/* ~/.config/Code/CachedData/* ~/.config/Code/CachedE
 ----
 
 ================================================================================
-git fetch -p && git branch -vv | awk '/: (gone|weg)]/{if ($1 != "*") print $1}' | xargs -r git branch -d
+git fetch -p && git branch -vv | awk '/: (gone|entfernt)]/{if ($1 != "*") print $1}' | xargs -r git branch -D
 
 // Löscht alle lokalen Branches die es nicht mehr remote Branch
 ================================================================================
