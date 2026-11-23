@@ -48,3 +48,11 @@ rm -rf ~/.config/Code/Cache/* ~/.config/Code/CachedData/* ~/.config/Code/CachedE
 // Löscht den VSCode Cache (unter Arch, kp ob das so geht bei Fedora). 
 // VsCode danach (eig vorher) einmal neustarten.
 ================================================================================
+
+----
+
+================================================================================
+git fetch -p && git branch -vv | awk '/: (gone|weg)]/{if ($1 != "*") print $1}' | xargs -r git branch -d
+
+// Löscht alle lokalen Branches die es nicht mehr remote Branch
+================================================================================
