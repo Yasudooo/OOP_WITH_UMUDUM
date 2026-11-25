@@ -1,0 +1,6 @@
+- alle bisherigen Klassen erhalten eine load Methode
+  -> Parameter : Referenz auf den Datei-Eingabedatenstrom (ifstream)
+
+- CLibraryPool: neuer Konstruktor -> Parameter Dateiname der XML-Datei
+  -> neuer Konstruktor öffnet XML Datei, liest eine Zeile ein. Dem entsprechend was in der Zeile steht wird dem jeweiligen Attribut zugewiesen (bei Objekten dann die load Methode aufrufen)
+

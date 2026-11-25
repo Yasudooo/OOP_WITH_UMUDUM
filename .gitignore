@@ -3,6 +3,7 @@
 *.so
 build/
 bin/
+.vscode/
 ueb03
 ueb02
 ueb04

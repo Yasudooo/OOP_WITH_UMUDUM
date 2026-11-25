@@ -1,0 +1,58 @@
+================================================================================
+git fetch --all --prune
+
+// Aktuellen Zustand des Servers abfragen (also alle Remote-Branches aktualisieren)
+================================================================================
+
+----
+
+================================================================================
+git reset --hard origin/<zu kopierender branch ohne die <> >
+z. B.: git reset --hard origin/Umudums_branche
+
+// Der lokale Branch wird hart auf den Remote-Branch gezwungen.
+// Alle lokalen Sachen, die anders sind, werden gelöscht.
+================================================================================
+
+----
+
+================================================================================
+git status
+
+// Zeigt an, auf welchem Branch du bist und ob dieser aktuell ist,
+// sowie ob Dateien da sind, die noch committet werden müssen.
+================================================================================
+
+----
+
+================================================================================
+git clean -fdx
+
+// Löscht ALLE Dateien, die NICHT im Main Remote Branch sind (also ausnahmslos).
+================================================================================
+
+----
+
+================================================================================
+git clean -fd
+
+// Löscht Dateien, die NICHT im Main Remote Branch sind,
+// AUßER Dateien, die auch in der .gitignore stehen.
+================================================================================
+
+----
+
+================================================================================
+rm -rf ~/.config/Code/Cache/* ~/.config/Code/CachedData/* ~/.config/Code/CachedExtensionVSIXs/*
+
+// Löscht den VSCode Cache (unter Arch, kp ob das so geht bei Fedora). 
+// VsCode danach (eig vorher) einmal neustarten.
+================================================================================
+
+----
+
+================================================================================
+git fetch -p && git branch -vv | awk '/: (gone|entfernt)]/{if ($1 != "*") print $1}' | xargs -r git branch -D
+
+// Löscht alle lokalen Branches die es nicht mehr remote Branch
+================================================================================
