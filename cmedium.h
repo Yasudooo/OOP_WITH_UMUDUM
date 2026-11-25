@@ -43,7 +43,7 @@ public:
 	void setStatus(eStatus); // wird mit dem bitweisen ODER (also dem Pipe Symbol | )realisiert
 
 	// Speichern (written by Umut):
-	void load(std::ifstream &file);
+	int load(std::ifstream &file);
 	// std:ifstream ist der Datentyp einer mit Open geöffneten file. Und Differenzierung statt pointer
 	// um nullpointer zu vermeiden. Die Differenzierung garantiert quasi ne File.
 
