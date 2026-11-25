@@ -40,5 +40,8 @@ cperson.o: cperson.cpp cperson.h
 ctime.o: ctime.cpp ctime.h
 	$(CC) $(CFLAGS) -c ctime.cpp
 
+tools.o: tools.cpp tools.h
+	$(CC) $(CFLAGS) -c tools.cpp
+
 clean:
-	rm -f *.o ueb03 ueb02
+	rm -f *.o ueb03 ueb02 ueb04

@@ -22,8 +22,11 @@ string till_char(string line, char wanted)
 
     // didnt find the char => returns npos
     if (string::npos == index)
+    {
+        free(copy_p);
         return "\0";
-
+    }
+    
     line.copy(copy_p, line.length());
     resett = copy_p;
 
