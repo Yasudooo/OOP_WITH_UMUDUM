@@ -2,8 +2,6 @@
 
 #define TOOLS_H
 
-using namespace std; // <-- ja das ist in tool.cpp auch aber es gab fehler ohne iwie
-
 string till_char(string line, char wanted);
 
 // Parse-Funktion -> wandelt eine Zeile in Tag und value um. Also z.b "   <City>Berlin</City>", '<' zu tag = City, value = Berlin
