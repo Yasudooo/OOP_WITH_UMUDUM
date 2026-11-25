@@ -1,5 +1,6 @@
 #include <string>
 #include <cstdlib>
+#include <cctype> // für groß und kleinschreibung -> tolower()
 
 using namespace std;
 
@@ -66,6 +67,11 @@ int parseLine(const string &line, string &tag, string &value) // const weil wir 
 
 	tag = text.substr(1, endTag - 1); // substring -> schneidet eine gewünschte länge raus.
 	// der erste Parameter also die 1, skippt das <. Und das endTag - 1 skippt das >. Wir bekommen die reine länge des titels.
+
+	for (char &c : tag)
+	{					// er geht jeden char durch im tag
+		c = tolower(c); // wandelt jeden Buchstaben in klein Buchstaben um -> spart arbeit
+	}
 
 	// Jetzt fehlt noch unser Value. Dieser ist zwischen > und </
 
