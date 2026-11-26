@@ -156,4 +156,5 @@ CLibraryPool::CLibraryPool(char *filename)
 
     } while ((!file.eof()) && (line.compare("</libraryPool>"))); // returns false if eof isn't reached
 
+    file.close();
 }

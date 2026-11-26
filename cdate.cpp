@@ -47,14 +47,14 @@ void CDate::print()
 }
 
 
-void CDate::load(ifstream &file)
+int CDate::load(ifstream &file)
 {
 	string tag, value, line;
 
 	if (!file)
 	{
 		cerr << "Öffnen der Datei fehlgeschlagen.\n";
-		return;
+		return -1;
 	}
 
 	do 

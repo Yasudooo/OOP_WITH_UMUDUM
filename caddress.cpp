@@ -62,10 +62,13 @@ void CAddress::setAddress(string Street, string Number, string Zipcode, string T
     setTown(Town);
 }
 
-void CAddress::load(ifstream &file)
+int CAddress::load(ifstream &file)
 {
     if (!file)
+    {
         cerr << "Öffnen der Datei fehlgeschlagen.\n";
+        return -1;
+    }
 
 	string tag, value, line;
 
