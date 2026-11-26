@@ -95,6 +95,15 @@ int CMedium::load(std::ifstream &file)
 		{
 			this->Status = CMedium::verfuegbar;
 		} // noch net fertig
+
+		if (stoi(value) == 2)
+			this->Status = CMedium::ausgeliehen;
+
+		if (stoi(value) == 4)
+			this->Status = CMedium::bestellt;
+
+		if (stoi(value) == 8)
+			this->Status = reserviert;
 	}
 	else
 	{
