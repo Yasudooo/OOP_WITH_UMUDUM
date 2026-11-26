@@ -8,6 +8,7 @@
 using namespace std;
 
 #include "cdate.h"
+#include "tools.h"
 
 void CDate::setDate(int dd, int mm, int yyyy)
 {
@@ -43,4 +44,26 @@ void CDate::print()
 {
 	cout << setfill('0') << setw(2) << Day << "." << setw(2) << Month << "."
 	     << setw(2) << Year;
+}
+
+
+void CDate::load(ifstream &file)
+{
+	string tag, value, line;
+
+	do 
+	{
+		getline(file, line);
+		parseLine(line, tag, value);
+
+		if (!tag.compare("<day>"))
+			this->Day = stoi(value); // atoi but for strings
+
+		if (!tag.compare("<month>"))
+			this->Month = stoi(value);
+
+		if (!tag.compare("<year>"))
+			this->Year = stoi(value);
+
+	} while ((!file.eof()) && (tag.compare("</date>")));
 }
