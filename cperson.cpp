@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -7,58 +8,88 @@ using namespace std;
 #include "ctime.h"
 #include "caddress.h"
 #include "cperson.h"
+#include "tools.h"
 
 void CPerson::print()
 {
-    cout << Name << endl;
+	cout << Name << endl;
 
-    Address.print();
-    cout << '\n';
-    Birthday.print();
+	Address.print();
+	cout << '\n';
+	Birthday.print();
 }
 
 void CPerson::setName(string Name)
 {
-    this->Name = Name;
+	this->Name = Name;
 }
 
 void CPerson::setAddress(CAddress Address)
 {
-    this->Address = Address;
+	this->Address = Address;
 }
 
 void CPerson::setBirthday(CDate Birthday)
 {
-    this->Birthday = Birthday;
+	this->Birthday = Birthday;
 }
 
 string CPerson::getName()
 {
-    return Name;
+	return Name;
 }
 
 CAddress CPerson::getAddress()
 {
-    return Address;
+	return Address;
 }
 
 CDate CPerson::getBirthday()
 {
-    return Birthday;
+	return Birthday;
 }
 
-
-CPerson::CPerson(string Name, CAddress &Address, CDate &Birthday) 
-: Name(Name), Address(Address), Birthday(Birthday)
+CPerson::CPerson(string Name, CAddress &Address, CDate &Birthday)
+	: Name(Name), Address(Address), Birthday(Birthday)
 {
-    // die Initialisierungsliste übersetzt bedeutet: Nehme vom Parameter die Werte und weise sie dem Attribut "Address" zu
+	// die Initialisierungsliste übersetzt bedeutet: Nehme vom Parameter die Werte und weise sie dem Attribut "Address" zu
 
-    //setName(Name);
-    //(this->Address).setAddress(Address); 
-    //setBirthday(Birthday);
+	// setName(Name);
+	//(this->Address).setAddress(Address);
+	// setBirthday(Birthday);
 }
 
 CPerson::~CPerson()
 {
-    cout << "Die Person " << this->Name << " gibt es nicht mehr.\n";
+	cout << "Die Person " << this->Name << " gibt es nicht mehr.\n";
+}
+
+int CPerson::load(std::ifstream &file)
+{
+
+	string line = "";  // Variable für eingelesene Zeile
+	string tag = "";   // Variable für gefundenden <Titel>
+	string value = ""; // Variable für gefundenen >Wert<
+
+	getline(file, line); // Zeile einlesen
+
+	parseLine(line, tag, value);
+
+	if (tag == "name") // nur in kleinbuchstaben weil parseLine alles umwandelt
+	{
+		this->Name = value;
+	}
+	else if (tag == "address")
+	{
+		this->Address.load(file);
+	}
+	else if (tag == "birthday")
+	{
+		this->Birthday.load(file);
+	}
+	else
+	{
+		return -1;
+	}
+	return 1;
 }

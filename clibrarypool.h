@@ -15,11 +15,6 @@ public:
 	void add(CLibrary *);
 	void add(CPerson *);
 	void print();
-
-	// Speichern (written by Umut):
-	int load(std::ifstream &file);
-	// std:ifstream ist der Datentyp einer mit Open geöffneten file. Und Differenzierung statt pointer
-	// um nullpointer zu vermeiden. Die Differenzierung garantiert quasi ne File.
 };
 
 #endif

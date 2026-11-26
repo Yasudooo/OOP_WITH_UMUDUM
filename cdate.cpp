@@ -13,7 +13,7 @@ using namespace std;
 void CDate::setDate(int dd, int mm, int yyyy)
 {
 	if (dd >= 1 && dd <= 31 && (mm + 1) >= 1 && (mm + 1) <= 12 &&
-	    yyyy >= 1900 && yyyy <= 2099)
+		yyyy >= 1900 && yyyy <= 2099)
 	{
 		Day = dd;
 		Month = mm;
@@ -43,15 +43,14 @@ CDate::CDate(int dd, int mm, int yyyy) { setDate(dd, mm, yyyy); }
 void CDate::print()
 {
 	cout << setfill('0') << setw(2) << Day << "." << setw(2) << Month << "."
-	     << setw(2) << Year;
+		 << setw(2) << Year;
 }
-
 
 void CDate::load(ifstream &file)
 {
 	string tag, value, line;
 
-	do 
+	do
 	{
 		getline(file, line);
 		parseLine(line, tag, value);
@@ -67,3 +66,7 @@ void CDate::load(ifstream &file)
 
 	} while ((!file.eof()) && (tag.compare("</date>")));
 }
+
+// zeih dir den neusten master und mach neuen branch. Hast dann neuste version
+// achte pls einf darauf immer die neuste version zu haben. Wenn du im graph
+// reinschaust siehst du das vorher gefühlt auf einem ganz anderem code warst
