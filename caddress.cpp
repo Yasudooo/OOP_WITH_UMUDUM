@@ -1,8 +1,10 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 
 using namespace std;
 
+#include "tools.h"
 #include "caddress.h"
 
 void CAddress::print()
@@ -60,3 +62,33 @@ void CAddress::setAddress(string Street, string Number, string Zipcode, string T
     setTown(Town);
 }
 
+int CAddress::load(ifstream &file)
+{
+    if (!file)
+    {
+        cerr << "Datei ist nicht geöffnet";
+        return -1;
+    }
+
+    string tag, line, value; 
+
+    do 
+    {
+        getline(file, line);
+        parseLine(line, tag, value);
+
+        if (!tag.compare("<street>"))
+            this->Street = value;
+
+        if (!tag.compare("<number>"))
+            this->Number = value;
+
+        if (!tag.compare("<zipcode>"))
+            this->Zipcode = value;
+
+        if (!tag.compare("<town>"))
+            this->Town = value;
+    } while (tag.compare("</address>") && !file.eof());
+
+    return 0;
+}

@@ -2,6 +2,13 @@ CFLAGS += -W -Wall -Wextra -g -Werror -fsanitize=address
 CC = g++
 OBJ = ueb02.o caddress.o cdate.o clocation.o cperson.o ctime.o 
 OBJ_3 = ueb03.o caddress.o cdate.o clocation.o cperson.o ctime.o cmedium.o clibrary.o clibrarypool.o
+OBJ_4 = $(OBJ_3) ueb04.o 
+
+ueb04: $(OBJ_4)
+	$(CC) $(CFLAGS) -o ueb04 $(OBJ_4)
+
+ueb04.o: ueb04.cpp 
+	$(CC) $(CFLAGS) -c ueb04.cpp
 
 ueb03: $(OBJ_3) 
 	$(CC) $(CFLAGS) -o ueb03 $(OBJ_3)

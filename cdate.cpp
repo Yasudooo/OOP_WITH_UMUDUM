@@ -46,9 +46,15 @@ void CDate::print()
 		 << setw(2) << Year;
 }
 
-void CDate::load(ifstream &file)
+int CDate::load(ifstream &file)
 {
 	string tag, value, line;
+
+	if(!file)
+	{
+		cerr << "Datei ist nicht geöffnet\n";
+		return -1;
+	}
 
 	do
 	{
@@ -65,6 +71,8 @@ void CDate::load(ifstream &file)
 			this->Year = stoi(value);
 
 	} while ((!file.eof()) && (tag.compare("</date>")));
+
+	return 0;
 }
 
 // zeih dir den neusten master und mach neuen branch. Hast dann neuste version
