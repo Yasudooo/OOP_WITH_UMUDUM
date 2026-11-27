@@ -63,7 +63,7 @@ int CLibrary::load(std::ifstream &file)
 		{
 			this->Address.load(file);
 		}
-		else if (tag == "person")
+		else if (tag == "manager")
 		{
 			this->Manager->load(file);
 		}
@@ -73,10 +73,7 @@ int CLibrary::load(std::ifstream &file)
 			pMedium->load(file);															   // File sachen laden
 			this->Books.push_back(pMedium);													   // Unser neuer Medium an den vektor dranhängen hinten
 		}
-		else
-		{
-			return -1;
-		}
+
 	} while ((!file.eof()) && (tag.compare("/library")));
 	return 1;
 }
