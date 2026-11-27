@@ -89,7 +89,7 @@ int CAddress::load(ifstream &file)
         if (!tag.compare("town"))
             this->Town = value;
 
-    } while (tag.compare("</address>") && !file.eof());
+    } while (tag.compare("/address") && !file.eof());
 
     return 0;
 }
