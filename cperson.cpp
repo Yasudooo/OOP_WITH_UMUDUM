@@ -12,10 +12,6 @@ using namespace std;
 
 void CPerson::print()
 {
-	if (!Name.compare("dummy"))
-	{
-		return;
-	}
 	cout << Name << endl;
 
 	Address.print();
@@ -65,10 +61,6 @@ CPerson::CPerson(string Name, CAddress &Address, CDate &Birthday)
 
 CPerson::~CPerson()
 {
-	if (!Name.compare("dummy"))
-	{
-		return;
-	}
 	cout << "Die Person " << this->Name << " gibt es nicht mehr.\n";
 }
 

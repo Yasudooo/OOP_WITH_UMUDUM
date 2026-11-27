@@ -16,11 +16,6 @@ using namespace std;
 
 void CLibrary::print()
 {
-
-	if (!Name.compare("dummy") || !Address->Street.compare("dummy") || !Name.compare("dummy") || !Name.compare("dummy"))
-	{
-		return;
-	}
 	// Daten über die Bibliothek
 	cout << "Bücherei Filiale " << this->Name << endl;
 	this->Address.print();
