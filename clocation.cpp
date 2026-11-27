@@ -68,7 +68,7 @@ int CLocation::load(ifstream &file)
         if (!tag.compare("rack"))
             this->Rack = value;
 
-    } while ((tag.compare("/clocation")) && (!file.eof()));
+    } while ((tag.compare("/location")) && (!file.eof()));
 
     return 0;
 }

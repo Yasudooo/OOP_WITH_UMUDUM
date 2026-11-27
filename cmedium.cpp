@@ -78,7 +78,7 @@ int CMedium::load(std::ifstream &file)
 		{
 			this->Title = value;
 		}
-		else if (tag == "signature")
+		else if (tag == "signatur")
 		{
 			this->Signature = value;
 		}
