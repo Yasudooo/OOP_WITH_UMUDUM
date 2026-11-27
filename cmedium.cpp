@@ -57,8 +57,7 @@ CMedium::~CMedium()
 	cout << "Das Objekt " << this->Title << " wurde vernichtet.\n";
 }
 
-CMedium::CMedium(string Title, string Signature, CLocation Location,
-				 int ageRating, CMedium::eStatus Status)
+CMedium::CMedium(string Title, string Signature, CLocation Location, int ageRating, CMedium::eStatus Status)
 	: Title(Title), Signature(Signature), Location(Location),
 	  ageRating(ageRating), Status(Status) {}
 

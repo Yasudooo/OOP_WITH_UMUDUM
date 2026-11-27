@@ -69,7 +69,7 @@ int CLibrary::load(std::ifstream &file)
 		}
 		else if (tag == "medium")
 		{
-			CMedium *pMedium = new CMedium("", "", CLocation("", ""), 0, (CMedium::eStatus)0); // Speicher reservieren
+			CMedium *pMedium = new(nothrow) CMedium("", "", CLocation("", ""), 0, (CMedium::eStatus)0); // Speicher reservieren
 			pMedium->load(file);															   // File sachen laden
 			this->Books.push_back(pMedium);													   // Unser neuer Medium an den vektor dranhängen hinten
 		}
@@ -84,7 +84,7 @@ CLibrary::~CLibrary()
 
 	delete (Manager);
 
-	for (unsigned int i = 0; i < Books.size(); i++)
+	while (!Books.empty())
 	{
 		for_delete_books = Books.back();
 		Books.pop_back();
