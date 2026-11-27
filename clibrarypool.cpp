@@ -30,10 +30,10 @@ CLibrary *alloc_Mem_Library()
 {
     CDate dummy_date;
     CAddress dummy_address("dummy", "dummy", "dummy", "dummy");
-    CPerson dummy_person("dummy", dummy_address, dummy_date);
+    CPerson *dummy_person = alloc_Mem_Person();
 
     // nothrow ensures that if memory cant allocate, that NULL is returned  
-    CLibrary *new_element = new(nothrow) CLibrary("dummy", dummy_address, &dummy_person);
+    CLibrary *new_element = new(nothrow) CLibrary("dummy", dummy_address, dummy_person);
 
     return new_element;
 }
