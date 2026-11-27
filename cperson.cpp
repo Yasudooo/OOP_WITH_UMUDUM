@@ -12,6 +12,10 @@ using namespace std;
 
 void CPerson::print()
 {
+	if (!Name.compare("dummy"))
+	{
+		return;
+	}
 	cout << Name << endl;
 
 	Address.print();
@@ -61,6 +65,10 @@ CPerson::CPerson(string Name, CAddress &Address, CDate &Birthday)
 
 CPerson::~CPerson()
 {
+	if (!Name.compare("dummy"))
+	{
+		return;
+	}
 	cout << "Die Person " << this->Name << " gibt es nicht mehr.\n";
 }
 
@@ -94,15 +102,15 @@ int CPerson::load(std::ifstream &file)
 		{
 			this->Birthday.load(file);
 		}
-	
-	// there are 3 types of people:
-	// 1. customer
-	// 2. managaer
-	// 3. chairman
-	// so in conclusion the do while loop has to check for everyone (bc it can be anyone of them)
-	// actually in data.xml the 3 types of people are categorized with <person> </person>, so it's unnecessary, 
-	// to check for everyone (to lazy to change it)
+
+		// there are 3 types of people:
+		// 1. customer
+		// 2. managaer
+		// 3. chairman
+		// so in conclusion the do while loop has to check for everyone (bc it can be anyone of them)
+		// actually in data.xml the 3 types of people are categorized with <person> </person>, so it's unnecessary,
+		// to check for everyone (to lazy to change it)
 	} while ((!file.eof()) && (tag.compare("/customer")) && (tag.compare("/chairman")) && (tag.compare("/manager")));
-	
+
 	return 1;
 }

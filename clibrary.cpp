@@ -16,6 +16,11 @@ using namespace std;
 
 void CLibrary::print()
 {
+
+	if (!Name.compare("dummy") || !Address->Street.compare("dummy") || !Name.compare("dummy") || !Name.compare("dummy"))
+	{
+		return;
+	}
 	// Daten über die Bibliothek
 	cout << "Bücherei Filiale " << this->Name << endl;
 	this->Address.print();
@@ -77,7 +82,7 @@ int CLibrary::load(std::ifstream &file)
 		{
 			return -1;
 		}
-	} while((!file.eof()) && (tag.compare("/library")));	
+	} while ((!file.eof()) && (tag.compare("/library")));
 	return 1;
 }
 
@@ -85,12 +90,12 @@ CLibrary::~CLibrary()
 {
 	CMedium *for_delete_books = NULL;
 
-	delete(Manager);
+	delete (Manager);
 
-	for (unsigned int i = 0 ; i < Books.size() ; i++)
+	for (unsigned int i = 0; i < Books.size(); i++)
 	{
 		for_delete_books = Books.back();
 		Books.pop_back();
-		delete(for_delete_books);
+		delete (for_delete_books);
 	}
 }
