@@ -45,36 +45,38 @@ void CLibrary::add(CMedium *Mediumprt)
 
 int CLibrary::load(std::ifstream &file)
 {
-
 	string line = "";  // Variable für eingelesene Zeile
 	string tag = "";   // Variable für gefundenden <Titel>
 	string value = ""; // Variable für gefundenen >Wert<
 
-	getline(file, line); // Zeile einlesen
+	do
+	{
+		getline(file, line); // Zeile einlesen
 
-	parseLine(line, tag, value);
+		parseLine(line, tag, value);
 
-	if (tag == "name") // nur in kleinbuchstaben weil parseLine alles umwandelt
-	{
-		this->Name = value;
-	}
-	else if (tag == "address")
-	{
-		this->Address.load(file);
-	}
-	else if (tag == "person")
-	{
-		this->Manager->load(file);
-	}
-	else if (tag == "medium")
-	{
-		CMedium *pMedium = new CMedium("", "", CLocation("", ""), 0, (CMedium::eStatus)0); // Speicher reservieren
-		pMedium->load(file);															   // File sachen laden
-		this->Books.push_back(pMedium);													   // Unser neuer Medium an den vektor dranhängen hinten
-	}
-	else
-	{
-		return -1;
-	}
+		if (tag == "name") // nur in kleinbuchstaben weil parseLine alles umwandelt
+		{
+			this->Name = value;
+		}
+		else if (tag == "address")
+		{
+			this->Address.load(file);
+		}
+		else if (tag == "person")
+		{
+			this->Manager->load(file);
+		}
+		else if (tag == "medium")
+		{
+			CMedium *pMedium = new CMedium("", "", CLocation("", ""), 0, (CMedium::eStatus)0); // Speicher reservieren
+			pMedium->load(file);															   // File sachen laden
+			this->Books.push_back(pMedium);													   // Unser neuer Medium an den vektor dranhängen hinten
+		}
+		else
+		{
+			return -1;
+		}
+	} while((!file.eof()) && (tag.compare("/library")));	
 	return 1;
 }

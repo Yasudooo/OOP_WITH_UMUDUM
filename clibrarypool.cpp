@@ -77,7 +77,7 @@ void CLibraryPool::print()
     }
 }
 
-CLibraryPool::CLibraryPool(char *filename)
+CLibraryPool::CLibraryPool(const char *filename)
 {
     ifstream file; // ifstream ist zum lesen da 
     CLibrary *lib = NULL;
@@ -120,7 +120,7 @@ CLibraryPool::CLibraryPool(char *filename)
          * so initialize with dummy values (or standard constructor)
         */
         
-        if (!tag.compare("<chairman>"))
+        if (!tag.compare("chairman"))
         {
             CAddress dummy_address("dummy", "dummy", "dummy", "dummy");
             CDate dummy_date;
@@ -128,10 +128,10 @@ CLibraryPool::CLibraryPool(char *filename)
             elPatron->load(file); 
         }
 
-        if (!tag.compare("<name>"))
+        if (!tag.compare("name"))
             this->Büchereiverband = value;
 
-        if (!tag.compare("<library>"))
+        if (!tag.compare("library"))
         {
             lib = alloc_Mem_Library();
 
@@ -142,7 +142,7 @@ CLibraryPool::CLibraryPool(char *filename)
             }
         }
 
-        if (!tag.compare("<customer>"))
+        if (!tag.compare("customer"))
         {
             Customer = alloc_Mem_Person();
 
@@ -156,4 +156,26 @@ CLibraryPool::CLibraryPool(char *filename)
 
     } while ((!file.eof()) && (line.compare("</libraryPool>"))); // returns false if eof isn't reached
 
+}
+
+CLibraryPool::~CLibraryPool()
+{
+    CPerson *for_delete_person = NULL;
+    CLibrary *for_delete_lib = NULL;
+    // einfach der Reihe nach alle reservierten Speicherbereiche der Attribute freigeben 
+    delete(elPatron);
+
+    while (!libraryStores.empty())
+    {
+        for_delete_lib = libraryStores.back();
+        libraryStores.pop_back();
+        delete(for_delete_lib);
+    }
+
+    while (!Customer.empty())
+    {
+        for_delete_person = Customer.back();
+        Customer.pop_back();
+        delete(for_delete_person);
+    }
 }

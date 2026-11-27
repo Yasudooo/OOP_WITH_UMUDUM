@@ -1,8 +1,10 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 
 using namespace std;
 
+#include "tools.h"
 #include "cdate.h"
 #include "caddress.h"
 #include "cperson.h"
@@ -43,4 +45,30 @@ CLocation::CLocation(string Section, string Rack)
 {
     setSection(Section);
     setRack(Rack);
+}
+
+int CLocation::load(ifstream &file)
+{
+    if (!file)
+    {
+        cerr << "Die Datei ist nicht geöffnet.\n";
+        return -1;
+    }
+
+    string tag, value, line;
+
+    do 
+    {
+        getline(file, line);
+        parseLine(line, tag, value);
+
+        if (!tag.compare("section"))
+            this->Section = value;
+
+        if (!tag.compare("rack"))
+            this->Rack = value;
+
+    } while ((tag.compare("/clocation")) && (!file.eof()));
+
+    return 0;
 }

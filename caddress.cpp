@@ -77,17 +77,18 @@ int CAddress::load(ifstream &file)
         getline(file, line);
         parseLine(line, tag, value);
 
-        if (!tag.compare("<street>"))
+        if (!tag.compare("street"))
             this->Street = value;
 
-        if (!tag.compare("<number>"))
+        if (!tag.compare("number"))
             this->Number = value;
 
-        if (!tag.compare("<zipcode>"))
+        if (!tag.compare("zipcode"))
             this->Zipcode = value;
 
-        if (!tag.compare("<town>"))
+        if (!tag.compare("town"))
             this->Town = value;
+
     } while (tag.compare("</address>") && !file.eof());
 
     return 0;

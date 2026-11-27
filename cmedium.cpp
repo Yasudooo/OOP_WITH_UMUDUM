@@ -69,45 +69,49 @@ int CMedium::load(std::ifstream &file)
 	string tag = "";   // Variable für gefundenden <Titel>
 	string value = ""; // Variable für gefundenen >Wert<
 
-	getline(file, line); // Zeile einlesen
+	do 
+	{
+		getline(file, line); // Zeile einlesen
 
-	parseLine(line, tag, value);
+		parseLine(line, tag, value);
 
-	if (tag == "title") // nur in kleinbuchstaben weil parseLine alles umwandelt
-	{
-		this->Title = value;
-	}
-	else if (tag == "signature")
-	{
-		this->Signature = value;
-	}
-	else if (tag == "location")
-	{
-		this->Location.load(file);
-	}
-	else if (tag == "fsk")
-	{
-		this->ageRating = stoi(value);
-	}
-	else if (tag == "status")
-	{
-		if (stoi(value) == 1)
+		if (tag == "title") // nur in kleinbuchstaben weil parseLine alles umwandelt
 		{
-			this->Status = CMedium::verfuegbar;
-		} // noch net fertig
+			this->Title = value;
+		}
+		else if (tag == "signature")
+		{
+			this->Signature = value;
+		}
+		else if (tag == "location")
+		{
+			this->Location.load(file);
+		}
+		else if (tag == "fsk")
+		{
+			this->ageRating = stoi(value);
+		}
+		else if (tag == "status")
+		{
+			if (stoi(value) == 1)
+			{
+				this->Status = CMedium::verfuegbar;
+			} // noch net fertig
 
-		if (stoi(value) == 2)
-			this->Status = CMedium::ausgeliehen;
+			if (stoi(value) == 2)
+				this->Status = CMedium::ausgeliehen;
 
-		if (stoi(value) == 4)
-			this->Status = CMedium::bestellt;
+			if (stoi(value) == 4)
+				this->Status = CMedium::bestellt;
 
-		if (stoi(value) == 8)
-			this->Status = reserviert;
-	}
-	else
-	{
-		return -1;
-	}
+			if (stoi(value) == 8)
+				this->Status = reserviert;
+		}
+		else
+		{
+			return -1;
+		}
+	} while ((!file.eof()) && (tag.compare("/medium")));
+
 	return 1;
 }

@@ -35,6 +35,7 @@ CDate::CDate()
 	*temp_time = time(NULL);
 	temp = localtime(temp_time);
 	setDate(temp->tm_mday, temp->tm_mon + 1, temp->tm_year + 1900);
+	free(temp_time);
 }
 
 // Konstruktor für beliebiges Datum
@@ -61,16 +62,16 @@ int CDate::load(ifstream &file)
 		getline(file, line);
 		parseLine(line, tag, value);
 
-		if (!tag.compare("<day>"))
+		if (!tag.compare("day"))
 			this->Day = stoi(value); // atoi but for strings
 
-		if (!tag.compare("<month>"))
+		if (!tag.compare("month"))
 			this->Month = stoi(value);
 
-		if (!tag.compare("<year>"))
+		if (!tag.compare("year"))
 			this->Year = stoi(value);
 
-	} while ((!file.eof()) && (tag.compare("</date>")));
+	} while ((!file.eof()) && (tag.compare("/date")));
 
 	return 0;
 }

@@ -11,10 +11,12 @@ class CLibraryPool
 
 public:
 	CLibraryPool(string, CPerson *);
-	CLibraryPool(char *);
+	CLibraryPool(const char *);
+	~CLibraryPool();
 	void add(CLibrary *);
 	void add(CPerson *);
 	void print();
+	void free_mem();
 };
 
 #endif

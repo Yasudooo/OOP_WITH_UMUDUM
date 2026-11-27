@@ -66,30 +66,43 @@ CPerson::~CPerson()
 
 int CPerson::load(std::ifstream &file)
 {
+	if (!file)
+	{
+		cerr << "Die Datei ist nicht geöffnet.\n";
+		return -1;
+	}
 
 	string line = "";  // Variable für eingelesene Zeile
 	string tag = "";   // Variable für gefundenden <Titel>
 	string value = ""; // Variable für gefundenen >Wert<
 
-	getline(file, line); // Zeile einlesen
+	do
+	{
+		getline(file, line); // Zeile einlesen
 
-	parseLine(line, tag, value);
+		parseLine(line, tag, value);
 
-	if (tag == "name") // nur in kleinbuchstaben weil parseLine alles umwandelt
-	{
-		this->Name = value;
-	}
-	else if (tag == "address")
-	{
-		this->Address.load(file);
-	}
-	else if (tag == "birthday")
-	{
-		this->Birthday.load(file);
-	}
-	else
-	{
-		return -1;
-	}
+		if (tag == "name") // nur in kleinbuchstaben weil parseLine alles umwandelt
+		{
+			this->Name = value;
+		}
+		else if (tag == "address")
+		{
+			this->Address.load(file);
+		}
+		else if (tag == "birthday")
+		{
+			this->Birthday.load(file);
+		}
+	
+	// there are 3 types of people:
+	// 1. customer
+	// 2. managaer
+	// 3. chairman
+	// so in conclusion the do while loop has to check for everyone (bc it can be anyone of them)
+	// actually in data.xml the 3 types of people are categorized with <person> </person>, so it's unnecessary, 
+	// to check for everyone (to lazy to change it)
+	} while ((!file.eof()) && (tag.compare("/customer")) && (tag.compare("/chairman")) && (tag.compare("/manager")));
+	
 	return 1;
 }
