@@ -80,3 +80,17 @@ int CLibrary::load(std::ifstream &file)
 	} while((!file.eof()) && (tag.compare("/library")));	
 	return 1;
 }
+
+CLibrary::~CLibrary()
+{
+	CMedium *for_delete_books = NULL;
+
+	delete(Manager);
+
+	for (unsigned int i = 0 ; i < Books.size() ; i++)
+	{
+		for_delete_books = Books.back();
+		Books.pop_back();
+		delete(for_delete_books);
+	}
+}

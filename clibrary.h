@@ -11,6 +11,7 @@ class CLibrary
 
 public:
 	CLibrary(string, CAddress, CPerson *);
+	~CLibrary();
 	void add(CMedium *);
 	void print();
 
